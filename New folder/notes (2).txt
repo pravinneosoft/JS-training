@@ -1,0 +1,120 @@
+--> React Js :- It is an open-source , cross platform javascript libarary which is used to develop user interfaces (UI) (Front End)
+  -> It is only View Layer of the application 
+  -> It is maintained by Facebook 
+  -> It is used to develop SPA (Single Page Application)
+  -> Features of React Js 
+    1. Components based architecture
+    2. JSX (javascript syntex extension), it provide to write html code in the javascript code.It is benificial for error handling.
+    3. Virtual DOM : It is a programming concept where a virtual representation of a UI is kept in the memory and synced with the Real DOM.
+
+      -> Shadow DOM :- It is a browser technology designed for scoping variables and css in web components.
+
+      --> Environmental Setup 
+        -> Node Js environment 
+          -> Download and install node js 
+            https://nodejs.org/en/download/
+          -> How we create react app 
+            npx create-react-app aapname 
+          -> How we execute the react app 
+            cd appname 
+            npm start (3000 in default browser)
+    -> How react app execute 
+     index.html 
+     <div id="root"></div>
+     ---> src/index.js (main js entry point file) --> It get the id root from index.html and load the default component (App) in the div.
+
+     -> Dynamic data rendering 
+        {} :- expressions 
+        App.js 
+        const title="SUmit";
+
+        <p> {title} </p>
+      -> render array and object 
+        map() 
+      -> components :- are the core building block of the react app. They are used for reusability.Every component have their own design and logics.
+         -> Types of components 
+            -> class components 
+            -> function components 
+            -> class components :-
+              Myclass.js 
+              import React,{Component} from 'react';
+              class Myclass extends Component 
+              {
+                render(){
+                  return(
+                    <>
+                        <h2> My Class Component </h2>
+                    </>
+                  )
+                }
+              }
+              export default Myclass;
+              -> How we use a component in another component 
+              import Myclass from './Myclass';
+
+              <Myclass />
+            -> props (properties):- are used to pass data from parent component to child component.(read only) (immutable)
+            App.js 
+            const title="xyz";
+            <Myclass mytitle={title}/>
+            -> read 
+             this.props.propsname
+            -> states :- are used to manage information within a component.they are mutable it means we can change the state value.
+               -> How we set state 
+                  constructor(props){
+                    super(props);
+                    this.state={count:0}
+                  }
+               -> How we react state 
+                 this.state.count 
+               -> How we update the state 
+                 this.setState({count:this.state.count+1})
+                -> Life cycle methods :- every component have their own lifecycle
+              -> Its have 3 phases 
+                 1. Mounting :- when our component is load 
+                 2. Updating :- when their is any update in state|pro 
+                 3. Unmounting :- when we leave the component
+               -> Initialization :- constructor 
+               -> Mounting :- It is the stage of rendering the JSX returned by the render method itself.
+                 -> componentDidMount() :- It invoked right after the component is mounted on the DOM. It invoke only once. In this we call some APIs which we need to load when my component is render.
+              -> Updating :- when there is any changes in props and state then a function is call.
+                 componentDidUpdate(prevState,prevProps):- 
+                -> Unmounting:- when we leave from the component .
+                 componentWillUnmount() :- used to flush up unwanted data 
+                   componentWillUnmount(){
+                      //flush data 
+                   }
+
+                -> Http Call | Network Call (How we consume the API )
+                  -> fetch() :- return an promise 
+                   const API="https://jsonplaceholder.typicode.com/posts";
+        fetch(API)
+        .then(res=> res.json())
+        .then(data=>{
+            console.log(data)
+            this.setState({post:data})
+        })
+        .catch(err=> console.log(err))
+
+        -> axios :- 3rd party module 
+          npm install axios --save 
+
+          import axios from 'axios';
+          const API="https://jsonplaceholder.typicode.com/posts";
+          axios.get(API)
+          .then(res=>{
+            console.log(res.data)
+          })
+          .catch(err=> console.log(err))
+        -> async/await 
+        async componentDidMount(){
+          try{
+        const API="https://jsonplaceholder.typicode.com/posts";
+        const res=await fetch(API);
+        const json=await res.json();
+        this.setState({post:json})
+        }
+        catch(err){
+          console.log(err)
+        }
+       }

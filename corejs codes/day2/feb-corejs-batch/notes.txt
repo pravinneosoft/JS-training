@@ -1,0 +1,204 @@
+---> Javascript :- It is an client side scripting language which is used to apply some dynamic concepts in our web application like some animations , event handling , validations , dom manupulations etc. 
+  --> CLient side :- execute through browser 
+  -> scripting language :- interprting language(line by line)
+  --> It is an case sensitive language 
+  --> extension is .js 
+  --> code is write on <script> tag 
+  --> How we implement Javascript 
+    <html>
+      <head>
+        <script>
+           js code 
+        </script>
+          or 
+        <script src="first.js"></script>
+      </head>
+    </html>
+    -> EcmaScript :- It is a standard (Es)
+      -> Old Javascript (vanilla js) (Es 5)
+      -> New features ( Es6 | 7 | 8)
+    --> How Javascript code is executed 
+    The source code is passed through a program called Javascript Engine.
+      -> Every browser have a Javascript engine 
+        -> Chrome :- V8 
+        -> Mozilla :- Spider monkey 
+        -> IE :- chakra 
+    -> Vanilla Javascript (Es 5)
+    --> Javascript is programming language 
+      -> Comments :- to describe a code 
+        single:- // 
+        multiple :- /*  */
+      -> Concatenation (+)
+      -> Es 6(template literal) :- backtrick (``) is used to combine string and variables 
+      -> Output (render)
+        document.write("--")
+        console.log("--") :- to debug code 
+          ** all js error are shown in console 
+      -> Variables :- are the temporary memory location which hold input data.
+        syntex :-
+         var varname=value;
+           or 
+        varname=value;
+          -> rules to define variable  
+            -> start with alphabate [a-zA-Z]
+            -> after it combination of [a-zA-Z0-9_$]
+          eg:
+            var empName="anuj";//string 
+            var emp_salary=45678;//number 
+      --> Datatype :- type declartion of variable but in Javascript it allocate at runtime as per the variable value.
+        -> number (124,45.67)
+        -> string :- '' , " " 
+        -> boolean :- true | false 
+        -> array :- []
+        -> object :- {}
+        -> null 
+        -> undefined 
+          --> typeof varname :- Datatype of variable 
+        -> Operators (to perform operations)
+          -> arthematic (calculation) :- + , - , / ,* , % , ++ , -- 
+          -> assignment :- = , += , -= ,/ = , *=, %= 
+              total=0;
+              for(i=1; i<=10; i++){
+                  total+=i; // total=total+i 
+              }
+          -> relational 
+           > , <= , >= , > 
+          -> comparison 
+            == , != , === , !== 
+            == :- only check values , if values are match then it return true 
+            === :- check both value and datatype , if both the compare then it return true 
+              eg:
+              var a=10;//number 
+              var b="10";//string 
+                if(a==b) // true 
+                if(a===b) // false 
+          -> logical 
+            && , || , !
+          -> COnditions || selection (return boolean)
+            if else :- 1 or 2 conditions 
+            if else if else :- more then 2 conditons 
+            nested if :- when all the conditons are correct then it true 
+            eg:
+              var uname="anuj";
+              var password="12345";
+               if(uname==="anuj"){
+                  if(password==="12345"){
+                      alert("Welcome : "+uname);
+                  }
+                  else {
+                      alert("Enter correct password")
+                  }
+               }
+               else {
+                   alert("Enter correct uname");
+               }
+            -> switch case :- multi-decison making (it is fast then if else )
+             switch(expression)
+             {
+                 case val : statement;
+                      break;
+                 ----
+                 ----
+                 default : statement;
+             }
+             --> Looping (iteration)
+               -> for :- conditon is check at the starting of the loop.
+                 for(i=1; i<=5; i++){
+                     console.log(i);//1 2 3 4 5
+                 }
+               -> while :- depend on the condition , return boolean value.
+                 while(condition){
+                     //statement
+                 }
+               -> dowhile :- condition is check at the end so this loop execute at least once 
+                do {
+                    statement
+                }while(conditon);
+            --> Array :- is a group of elements which is used to store multiple value in a single variable of any type.
+              -> array values are store in index and index start with 0.
+                syntex:
+                  var arrayname=new Array(val,val,val,..)
+                    or 
+                  var arrayname=[val,val,val,...];(prefer)
+              --> eg:
+                var arr=[1234,45.67,"anuj",true];
+                arr[2];
+                -> find the size of an array 
+                  arrayname.length 
+                ->
+                 for(i=0; i<arr.length; i++){
+                   console.log(arr[i]);
+                 }
+              -> forEach loop :- used only for an array. loop is going on untill they found null.
+              eg:
+                arr.forEach(function(val){
+                  console.log(val);
+                })
+            --> functions :- used for reusability.To perform a specific task in a program.
+             Every function should return a value and function return only 1 value at a time.
+               -> syntex 
+               define : 
+               function functionname(){
+                 //code
+               }
+               call : 
+               functionname()
+              --> without argument 
+               function abc(){
+                 alert("Sumit Joshi")
+               }
+               abc();
+              --> with argument 
+               function add(a,b)//parameter
+               {
+                 //logical 
+                 return a+b;
+               }
+               var sum=add(5,6);//argument 
+    --> Events :- perform a specific task 
+      Events        EventHandler 
+      click          onclick 
+      dblclick
+      mouseover 
+      mouseout 
+      keyup 
+      keydown 
+      keypress
+      blur 
+      focus 
+      change 
+      load 
+      reload 
+      submit 
+      scroll 
+    ---> pre-define methods 
+      -> array :- 
+      -> substr()
+       JSON.stringify() :- to convert the object into JSON string 
+       JSON.parse() :- to parse JSON string into normal object.
+
+       --> JSON :- stand for Javascript Syntex Extension .used to comminicate between 2 servers 
+           -> data is in a key value pair 
+           -> 
+           {
+             "products": [
+               {"id":1,"pname":"A","price":234,"quantity":3},
+               {"id":2,"pname":"A","price":234,"quantity":3},
+               {"id":3,"pname":"A","price":234,"quantity":3},
+               {"id":4,"pname":"A","price":234,"quantity":3}
+             ]
+           }
+  -> All predefined methods of Javascript
+    array 
+    string 
+    Math 
+    Date 
+ -> prompt() :- to input data at runtime
+
+
+  --> **** DOM 
+
+
+
+
+

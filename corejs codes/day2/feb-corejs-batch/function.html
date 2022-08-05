@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function myarray(){
+           var arr=[23,45,6,7,88,9,1];
+           var sum=0;
+           var lar=0;
+        arr.forEach(function(val){
+            document.write(val+"<br/>");
+               sum+=val;
+               if(lar<val){
+                   lar=val;
+               }
+        })
+           document.write("The sum of array is "+sum);
+           document.write("<br/>The lar value  of array is "+lar);
+            }
+           
+        </script>
+        
+    </head>
+    <body>
+        <button onclick="myarray()">Click Here</button>
+    </body>
+</html>

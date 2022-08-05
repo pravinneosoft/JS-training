@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+         <p id="tar">Hello</p>
+         Name : <input type="text" id="fname"/> <br/>
+         <img src="images/one.png" width="200" height="200" onmouseover="xyz()" id="imm"/><br/>
+        <button onclick="abc()"> Click Here</button>
+        <script>
+            function abc(){
+                //access the paragraph 
+                var elem=document.getElementById("tar");
+                var fname=document.getElementById("fname").value;
+                elem.innerHTML="Hello : "+fname;
+                elem.style.color="green"
+                elem.style.border="2px solid red"
+
+            }
+            function xyz(){
+              document.getElementById("imm").src="images/two.png";
+            }
+        </script>
+    </body>
+</html>

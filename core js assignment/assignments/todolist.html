@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript To DO List</title>
+<style>
+    .container{
+background-color: rgba(90, 209, 21, 0.555);
+border-radius: 30px;;
+height:auto;
+padding:20px 20px;
+position: relative;
+}
+
+#textinput{
+width:62%;
+outline:none;
+border:2px solid blueviolet;
+border-radius: 10px;
+height:50px;
+font-size: 20px;
+padding-left: 10px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#Addbutton{
+position: absolute;
+right: 283px;
+top: 92px;
+margin-top: 10px;
+width:15%;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+background-color: blueviolet;
+color:white;
+font-size: 40px;;
+outline:none;
+transition: 0.5s;
+
+}
+
+#clearAll{
+    position: absolute;
+right: 50px;
+top: 92px;
+margin-top: 10px;
+width:15%;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+background-color: blueviolet;
+color:white;
+font-size: 40px;
+transition: 0.5s;
+}
+
+#Addbutton:hover{
+background-color: white;
+color:black;
+cursor: pointer;
+}
+
+#clearAll:hover{
+background-color: white;
+color:black;
+cursor: pointer;
+}
+.mypara{
+color:white;
+font-size: 20px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-align: center;
+}
+
+#mybutton{
+width:15%;
+background-color: red;
+outline:none;
+color:white;
+border-radius: 20px;
+font-size: 20px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+margin:auto;
+}
+
+#editlist{
+width:15%;;
+background-color: red;
+outline:none;
+color:white;
+border-radius: 20px;;
+font-size: 20px;;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+margin:auto;
+margin-top:10px;
+}
+#maincontainer{
+    display: grid;
+    display: -moz-grid;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: white;text-align: center;text-transform: uppercase;">Javascript TO DO LIST</h1>
+        <input type="text" id="textinput"> 
+     
+        <button id="Addbutton">ADD</button>
+        <button id="clearAll">Clear</button>
+        <div id="maincontainer">
+        </div> 
+   </div>
+    <script>
+let input = document.getElementById("textinput");
+let Addbutton = document.getElementById("Addbutton");
+let maincontainer = document.getElementById("maincontainer");
+let clearAll = document.getElementById("clearAll");
+    Addbutton.addEventListener('click',function(){
+        let paragraph = document.createElement('p');
+        let mybutton = document.createElement('button');
+        let edit = document.createElement('button');
+        let hr = document.createElement('HR');
+        paragraph.classList.add('mypara');
+        mybutton.setAttribute('id','mybutton');
+        edit.setAttribute('id','editlist');
+        paragraph.innerText=input.value;
+        mybutton.innerText="Delete";
+        edit.innerText="Edit";
+        maincontainer.appendChild(paragraph);
+        maincontainer.appendChild(mybutton);
+        maincontainer.appendChild(edit);
+        maincontainer.appendChild(hr);
+ mybutton.addEventListener('click',function(){
+    maincontainer.removeChild(paragraph);
+    maincontainer.removeChild(mybutton);
+    maincontainer.removeChild(edit);
+    maincontainer.removeChild(hr);
+})
+edit.addEventListener('click',function(){
+   let editvalue = prompt("Enter Value Here");
+   paragraph.innerHTML = editvalue;
+    
+})
+})
+clearAll.addEventListener('click',function(){
+    maincontainer.innerHTML=" ";
+    input.innerHTML=" ";
+})
+    </script>
+</body>
+
+</html>

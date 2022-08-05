@@ -1,0 +1,50 @@
+--> Promises :- It is an object that encapsulates the result of an asynchronous operations.
+  -> A promise has 3 states 
+    1. Pending 
+    2. Fulfilled (value)  
+    3. Rejected  (reason)
+     **** In the start, the state of a promise is pending , (process).Depending on the result of the asynchronous operations, the state changes to either Fulfilled or Rejected.
+       -> Fulfilled :- completed successfully 
+       -> Rejected :- It is Failed
+    eg:
+    const promise=new Promise((resolve,reject)=>{
+        let age=23;
+        if(age>=18){
+            resolve("Elligible")
+        }
+        else {
+            reject("Not Elligibel")
+        }
+    })
+    -> Consuming a Promise (then , catch)
+     -> then() :- to get the value (Fulfilled) of a promise we call the then() method.
+     promise.then(res=>{
+         console.log(res)
+     })
+     -> catch() :- if we want to get the error (rejected) then we use catch()
+     promise.catch(err=>{
+         console.log(err)
+     })
+
+     --> fetch() :- inbuild methods of the javascript to call (consume) any api.
+       -> fetch(URL)
+          .then(res=> res.json())
+          .then(data=> console.log(data))
+          .catch(err=> console.log(data))
+    -> promise chaining
+    -> Fake Api
+    https://jsonplaceholder.typicode.com/
+    --> Assigments 
+      1. Fetch all the posts from the posts api and render in our html 
+      api :https://jsonplaceholder.typicode.com/posts
+      <button> Fetch Posts </button>
+      <div>
+        title 
+        body 
+        hr 
+        next post
+      </div>
+      2. Fetch all users details in the table
+      api : https://jsonplaceholder.typicode.com/users 
+      <button> Fetch Users </button>
+      S.no  Name Email Phone Website

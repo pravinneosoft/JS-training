@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+         Choice One : 
+         <input type="radio" name="r1" value="one"/> One 
+         <input type="radio" name="r1" value="two"/> Two
+         <input type="radio" name="r1" value="three"/> Three <br/>
+        <button onclick="abc()"> Click Here</button> 
+        <p id="target"></p>
+        <script>
+            function abc(){
+                let choice=document.getElementsByName('r1');
+                choice.forEach(function(val){
+                    if(val.checked){
+                   document.getElementById("target").innerHTML="Your choice is : "+val.value
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>

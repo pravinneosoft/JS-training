@@ -1,0 +1,166 @@
+---> Es 6 :- 
+  -> let keyword :- we can define local scope within a scope.
+     eg:
+      for(let i=1; i<=5; i++){
+          console.log(i);// 1 to 5 
+      }
+      console.log(i);//i is not define 
+      if(true){
+          let x=10;
+      }
+    -> Node js Environment 
+       DOwnload and install node js 
+       https://nodejs.org/en/download/
+        -> How we check node is install or not 
+          -> open cmd 
+             node -v 
+             -> when we install node npm is also install with it 
+             npm (node package manager) :- used to download 3rd party node modules 
+    -> Constant :- It is a value that never be changed . It is fixed and permanent.
+        const API_URL="http://localhost:4500/myapi";
+       ** in case of array and object we can change the constant values.
+    -> Arrow function :- It allows us to create functions in a cleaner way . sort and concise code. (=>)
+        eg:
+         regular 
+           function add(a,b){
+               return a+b 
+           }
+           let add=function(a,b){
+               return a+b
+           }
+           -> arrow 
+           let add=(a,b)=>(a+b); 
+           let add=(a,b)=>{
+               return (a+b);
+           }
+           let abc= () => console.log("Hello")
+
+           eg:
+           let age=10;
+           let welcome= (age<18) ? ()=> console.log('Kid') : ()=> console.log('Adult')
+           eg:
+           let arr=[2,3,45,67,8,9];
+           let sum=0;
+           arr.forEach(val=> sum+=val);
+        ** this is not associated with arrow functions.
+        -> Template Literal :- It is a new way to create a string.we can use backtricks (``) symbol to create a string. 
+          eg:
+           let a=10;
+           let b=20;
+           let sum=a+b;
+           console.log(`The sum of ${a} and ${b} is ${sum}`);
+           // in old 
+           console.log("The sum of "+a+" and "+b+" is "+sum);
+        -> destructuring :- It allows us to extract data from arrays , objects , maps into new distinct variables.
+            -> array 
+              let arr=["anuj","anil","sunil"];
+              let [a,b,c]=arr;
+            -> object  
+            let obj={name:"anuj",age:23};
+              let {name,age}=obj;
+    --> Spread Operator :- (...) It expands iterables into individual elements. It means that we can copy or spread array or object , in anonter array or object.
+     eg:
+       let arr=[2,3,4,5,6];
+       let newArray=[...arr,8,9];//2 3 4 5 6 
+       let obj={name:"anuj",age:23};
+       let newObject={...obj,name:"Sumit",city:"noida"}
+   --> Rest parameter :- (...) A function can be called with any number of arguments , no matter how it is defined.
+     ** The limitaion is that the rest parameter is the last formal parameter of the function.
+     eg:
+       function addAll(...args){
+         let sum=0;
+         args.forEach(val=> sum+=val);
+         return sum;
+       }
+     console.log(addAll(2,3))
+     console.log(addAll(2,3,4))
+     console.log(addAll(2,3,4,5))
+    -> map() in javascript :- It creates an array by calling a specific function on each element present in the parent array.
+       array.map((val,index)=>{
+
+       })
+       eg:
+         let arr=[2,4,6,8,9];
+         let newArr=arr.map((val,index)=>{
+             return {key:index,value:val}
+         })
+         console.log(newArr);
+    -> filter() :- It creates an array as per the filter data.
+     eg:
+         let arr=[2,4,6,8,9];
+         let newArr=arr.filter(val=> val%2==0);
+         console.log(newArr);
+   -> reduce :- return only single value.It reduce the array to a single value (left to right)
+
+   ---> OOPS :- Object Oriented Programming Structure.
+     -> for reusability 
+     -> Memory management 
+    -> Class :- A class is a blueprint for creating objects. It is just like a template where we can store or define the data.
+       or 
+      class is a group of data members (variables) , member functions (methods) and properties.
+        --> before es6 
+        function Person(fname)
+        {
+          this.name=fname
+        }
+        Person.prototype.getName=function(){
+          return this.name;
+        }
+        var obj=new Person("Sumit");
+        console.log(obj.getName());
+        --> es 6 class
+
+         class Person 
+         {
+           constructor(fname){
+             this.name=fname;
+           }
+           getName(){
+             return this.name;
+           }
+         }
+         let obj=new Person("Sumit");
+        console.log(obj.getName());
+        -> constructor :- It is used to initilize the object. It automatically call when we create an instance of a class. It is same name as class name but in JS we define constructor with constructor() method. We only define 1 constructor at a time , with argument or without argument.
+          constructor(){
+            // initilize
+          }
+      --> getters and setters 
+      get and set keyword to use getters and setters
+        eg:
+        class Person {
+    constructor(name)
+    {
+        this._name=name;
+    }
+    get name(){
+        return this._name;
+    }
+    set name(newName){
+        this._name=newName
+    }
+}
+let person=new Person("Sumit Joshi");
+console.log(person.name);//call getter
+person.name="ANil singh";//call setter
+console.log(person.name);
+
+--> class Expression :- It is an alternate way to define a new class.
+let Person=class {
+  constructor(name){
+    this.name=name;
+  }
+  getName(){
+    return this.name;
+  }
+}
+
+--> static methods :- we can define the static methods in a class. and we access these static methods with the class name , not with the object of the class.(It bound to a class, not a instance of that class)
+
+
+
+
+
+
+
+

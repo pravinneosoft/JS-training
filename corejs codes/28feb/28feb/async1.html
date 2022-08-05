@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <body>
+        <script>
+            async function showData(){
+        const usersAPi="https://jsonplaceholder.typicode.com/users";
+        //read a json data 
+        try {
+        let responce=await fetch(usersAPi);
+        let users=await responce.json();
+        console.log(users)
+        }
+        catch(err){
+           console.log("Error : "+err);
+        }
+            }
+         showData();
+        </script>
+    </body>
+</html>

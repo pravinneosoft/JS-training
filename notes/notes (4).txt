@@ -1,0 +1,87 @@
+---> Object :- It is a collection of key/value pairs or properties.When the value is a function, then it is called method. So that we can store properties and methods in an object.
+   -> types of object 
+      -> Object Literal 
+      -> Objects Constructor 
+        --> Object Literal (prefer)
+         eg:
+         var obj={
+             fname:"Sumit",
+             lname:"Joshi",
+            fullname:function(){
+                return this.fname+" "+this.lname;
+            }
+         }
+         console.log(obj.fname);//sumit 
+         console.log(obj.fullname());//sumit joshi
+        --> Object Constructor 
+        var obj=new Object();
+        obj.fname="sumit";
+        obj.lname="joshi";
+        obj.fullname=function(){
+            return this.fname+" "+this.lname;
+        }
+           //another way 
+           function Person(fname,lname)
+           {
+              this.fname=fname;
+              this.lname=lname;
+              this.fullname=function(){
+                  return this.fname+" "+this.lname;
+              }
+           }
+           let person=new Person("Sumit","Joshi");
+    --> prototype :- It is a keyword which is used to define methods and properties later on the function or object.
+     eg:
+       function Person(){
+            this.name="sumit"
+            this.age=34;
+        }
+        Person.prototype.gender="male"
+        let p1=new Person();
+       // p1.gender="male";
+        let p2=new Person();
+        console.log(p1.gender);
+        console.log(p2.gender);
+        ---> scnerio 
+          class :- Car 
+             by default speed :- 100 
+                -> methods 
+                    acc 
+                      speed+=50 
+                    checkspeed 
+                      display the current speed 
+        -> Module Pattern (IIFE :- Immidiately Invoke Function expression)
+         (function(){
+            //statements 
+         })();
+         --> 
+          var calc=function(){
+              return {
+                  add:function(a,b){
+                      return (a+b)
+                  },
+                  sub:function(a,b){
+                      return (a-b);
+                  }
+              }
+          }();
+          console.log(calc.add(4,5))
+          console.log(calc.sub(10,5))
+        -> Hoisting :- It is the default behavior of moving all the declarations at the top of the scope defore code execution.
+           -> Variable Hositing 
+           -> Function Hoisting 
+             eg:
+             a=10;
+             console.log(a);
+             var a;
+             console.log(add(2,3));
+             function add(a,b){
+                 return (a+b);
+             }
+--> Assignment 
+  -> Create a todo list in Javascript 
+
+  Enter Task    textfield 
+     Add 
+  S.no   Task   Action 
+  1      A      Edit  Delete

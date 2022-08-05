@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+           var arr=[23,45,6,7,88,9,1];
+           var sum=0;
+           var lar=0;
+        //    for(i=0; i<arr.length; i++){
+        //        document.write(arr[i]+"<br/>");
+        //        sum+=arr[i];
+        //        if(lar<arr[i]){
+        //            lar=arr[i];
+        //        }
+        //    }
+        arr.forEach(function(val){
+            document.write(val+"<br/>");
+               sum+=val;
+               if(lar<val){
+                   lar=val;
+               }
+        })
+           document.write("The sum of array is "+sum);
+           document.write("<br/>The lar value  of array is "+lar);
+        </script>
+        
+    </head>
+</html>

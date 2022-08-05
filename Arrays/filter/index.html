@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=[2,4,33,22,27,57,8,9];
+        let res=a.filter(function (val){
+            return val>25;
+        });
+        console.log(res);
+
+        let products=[
+            {
+                name :"sugar",
+                category:"dmart",
+                price:20
+            },
+            {
+                name :"shirt",
+                category:"cloth",
+                price:2034
+            },
+            {
+                name :"pants",
+                category:"cloth",
+                price:122
+            },
+            {
+                name :"laptop",
+                category:"electric",
+                price:2000
+            }
+        ];
+
+        let newAr= products.filter(item=>item.category=="cloth");
+        console.log(newAr);
+        
+        let newAr2= products.filter(item=>item.price>122);
+        console.log(newAr2);
+        </script>
+</body>
+</html>

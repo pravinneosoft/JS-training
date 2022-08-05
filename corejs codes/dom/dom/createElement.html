@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+          <h2> Create Element</h2>
+        <button id="btn"> Click Here</button> 
+        <div id="target"></div>
+        <script>
+                var btn=document.getElementById("btn");
+                btn.addEventListener('click',function(){
+                let element=document.createElement("p");
+                element.innerHTML="<h4>Hii this is a paragraph</h4>";
+                document.getElementById("target").appendChild(element);
+                })
+           
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  #msg{
+      color: red;
+  }
+ </style>    
+</head>
+<body>
+    <form id="form_id" method="post" name="myform">
+        <label>User Name :</label>
+        <input type="text" name="email"placeholder="enter mail" id="email"/>
+       <br> <label>Password :</label>
+        <input type="password" name="password"placeholder="password" id="password"/>
+      <br>  <input type="button" value="Login" id="submit" onclick="validate()"/>
+        </form>
+        <p id="msg"></p>
+        <script>
+          
+function validate(){
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+
+if ( email == "pravinsatpute@gmail.com" && password == "pass123"){
+document.getElementById('msg').innerHTML="login succesfully";
+document.getElementById("msg").style.color = "green";
+window.location = "succes.html";
+return false;
+}
+
+else{
+document.getElementById("msg").innerHTML="login fail";
+return false;
+}
+}
+        </script>
+</body>
+</html>

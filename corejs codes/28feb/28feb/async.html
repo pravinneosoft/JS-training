@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <body>
+        <script>
+        //     async function abc(){
+        //         return 123;
+        //     }
+        //    abc().then(res=>{
+        //        console.log(res)
+        //    })
+        async function xyz(){
+          let promise=new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+                 resolve("Sumit Joshi")
+              },2000)
+          })
+          let result= await promise;//wait until the promise resolve;
+          console.log(result);
+       } 
+       xyz();
+        </script>
+    </body>
+</html>

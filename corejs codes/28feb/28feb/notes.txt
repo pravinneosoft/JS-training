@@ -1,0 +1,36 @@
+-> Callback (callback hell)
+  function(){
+      function(){
+          function(){
+              function(){
+
+              }
+          }
+      }
+  }
+
+-> Promises :- To handle a asynchronous operations.It is an assurance that something will be done.
+--> Async / Await :- It is used to work promises in asynchronous functions.It is just a wrapper to restyle code and make promises eaiser to read and use. It makes asynchronous code look more like synchronous , which is easier to understand.
+    -> async functions : if we placed a async keyword before any function , that function return a promise
+      async function abc(){
+                return 123;
+            }
+           abc().then(res=>{
+               console.log(res)
+           })
+    -> await :-  await keyword makes javascript wait until that promise settles and return its result.We can use await only with async function.
+
+    eg:
+       async function xyz(){
+          let promise=new Promise((resolve,reject)=>{
+              setTimeout(()=>{
+                 resolve("Sumit Joshi")
+              },2000)
+          })
+          let result= await promise;//wait until the promise resolve;
+          console.log(result);
+       } 
+       xyz();
+       (async ()=>{
+
+       })();

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <body>
+        <script>
+         const shower=(time)=> new Promise((resolve,reject)=>{
+             resolve(time);
+         })
+         const eatBreakfast=(time)=> new Promise((resolve,reject)=>{
+             resolve(time);
+         })
+         const getDresses=(time)=> new Promise((resolve,reject)=>{
+             resolve(time);
+         })
+         const morningRoutine=async (startTime)=>{
+             try {
+             const step1Time=await shower(startTime);
+             const step2Time=await eatBreakfast(step1Time);
+             const step3Time=await getDresses(step2Time);
+             return step3Time;
+             }
+             catch(e){
+                 return e;
+             }
+         }
+         console.log(morningRoutine(20));
+        </script>
+    </body>
+</html>

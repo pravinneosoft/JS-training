@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="aaa" src="imges/1.png" width="400" height="400" name="image"alt="" />
+    <script>
+        var image=document.getElementById("aaa");
+        var img_array=["imges/2.png","imges/3.png","imges/4.png","imges/5.png","imges/6.png","imges/7.png","imges/4.png"];
+        var index=0;
+        function slide()
+        {
+            image.setAttribute("src",img_array[index]);
+            index++;
+            if(index>=img_array.length)
+            {
+            index=0;
+            }
+        }
+        setInterval("slide()",1000);
+        </script>
+</body>
+</html>
